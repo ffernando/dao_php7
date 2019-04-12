@@ -27,13 +27,36 @@ $busca = Codigo_081_classe_pdo_php_7_pdo_dao_Usuario::search("jo");
 // Pegando o array e transformando em json
 echo json_encode($busca);
 */
-
+/*
 // Acessando método para buscar
 // por login e senha
 $user = new Codigo_081_classe_pdo_php_7_pdo_dao_Usuario();
 $user->loginSenha("joaooo", "1234555");
 
 echo $user;
+*/
+/*
+// Inserindo novo usuario (parâmetros do construtor)
+$aluno = new Codigo_081_classe_pdo_php_7_pdo_dao_Usuario("aluno", "1234567");
+
+$aluno->inserirUsuario();
+
+// Mostra com toString e json do método construtor da 
+// classe instanciada (Usuario), e mostra na
+// tela com o id_usuario e date_cadastro via procedure
+// do banco de dados para o objeto (referência do objeto)
+echo $aluno;
+*/
+
+// Instanciação do objeto Codigo_081_classe_pdo_php_7_pdo_dao_Usuario();
+// Alterando usuario (update)
+$usuario = new Codigo_081_classe_pdo_php_7_pdo_dao_Usuario();
+
+$usuario->loadById(18);
+
+$usuario->upDados("professor", "543634");
+
+echo $usuario;
 
 /*
 // Instanciação do objeto Codigo_078_classe_pdo_php_7_pdo_dao_Sql
