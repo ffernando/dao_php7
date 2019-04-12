@@ -166,6 +166,21 @@ class Codigo_081_classe_pdo_php_7_pdo_dao_Usuario{
 			":id"=>$this->getIdusuario()
 		));
 	}
+	// Método para deletar usuarios
+	public function deleteUsuario(){
+
+		$sql = new Codigo_078_classe_pdo_php_7_pdo_dao_Sql();
+		// Deletando do banco de dados
+		$sql->query("DELETE FROM tb_usuarios WHERE id_usuario = :id", array(
+
+			":id"=>$this->getIdusuario()
+		));
+		// Zerando o objeto
+		$this->setIdusuario(0);
+		$this->setDescr_login("");
+		$this->setDescr_senha("");
+		$this->setDatecadastro(new DateTime());
+	}
 	// Visualizando os dados do banco de dados
 	// com a execução do método mágico __toString()
 	public function __toString(){

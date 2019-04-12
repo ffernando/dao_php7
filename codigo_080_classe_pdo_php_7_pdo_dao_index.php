@@ -47,7 +47,7 @@ $aluno->inserirUsuario();
 // do banco de dados para o objeto (referência do objeto)
 echo $aluno;
 */
-
+/*
 // Instanciação do objeto Codigo_081_classe_pdo_php_7_pdo_dao_Usuario();
 // Alterando usuario (update)
 $usuario = new Codigo_081_classe_pdo_php_7_pdo_dao_Usuario();
@@ -55,6 +55,17 @@ $usuario = new Codigo_081_classe_pdo_php_7_pdo_dao_Usuario();
 $usuario->loadById(18);
 
 $usuario->upDados("professor", "543634");
+
+echo $usuario;
+*/
+
+// Instanciação do objeto (Usuario)
+// Deletando usuario (delete)
+$usuario = new Codigo_081_classe_pdo_php_7_pdo_dao_Usuario();
+// Acessando o id do usuario
+$usuario->loadById(16);
+// Deletando usuario acessado pelo id
+$usuario->deleteUsuario();
 
 echo $usuario;
 
